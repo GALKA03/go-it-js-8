@@ -21,6 +21,7 @@ refs.form.addEventListener('input', e => {
     // confirm.log(parsForm)
 })
 populateTexterea();
+//onLateInput()
 //dataFormStorage();
 
 function onFormlSubmit(e) {
@@ -49,10 +50,15 @@ function populateTexterea(e) {
     if (savedMassage) {
         console.log(savedMassage)
         refs.textaria.value = savedMassage;
-        refs.input.value = savedMassage;
+       
     }
 }
-
+// function onLateInput() {
+//     const savedEmail = localStorage.getItem(SAVE_KEY);
+//     if (savedEmail) {
+//          refs.input.value = savedEmail;
+//     }
+//}
 // function dataFormStorage() {
 //     const data = JSON.parse(localStorage.getItem(SAVE_KEY))
 //     if (data) {
