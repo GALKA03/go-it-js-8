@@ -55,7 +55,7 @@ function onFormSubmit(e) {
 //  }
 
 (function populateMassageTexteria() {
-   savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
+  let savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
 //localStorage.removeItem(MESSAGE)
     if (savedMassage) {
         message.value = savedMassage
