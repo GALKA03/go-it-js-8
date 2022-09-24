@@ -8,8 +8,8 @@ const SECONDS = 'videoplayer-current-time'
 
     player.on('timeupdate',throttle(onPlayer, 1000));
    
-function onPlayer({seconds}) {
-
+function onPlayer({ seconds }) {
+    console.log({ seconds })
     localStorage.setItem(SECONDS, seconds) 
 
 }
