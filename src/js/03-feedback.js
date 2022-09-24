@@ -32,8 +32,10 @@ localStorage.setItem(MESSAGE, JSON.stringify(formData))
 
 //populateMassageTexteria();
 function onFormSubmit(e) {
-  JSON.parse(localStorage.getItem(MESSAGE))
-    e.preventDefault();
+ e.preventDefault();
+
+    console.log(JSON.parse(localStorage.getItem(MESSAGE)))
+   
     console.log('отправили fорму');
     e.currentTarget.reset();
     localStorage.removeItem(MESSAGE)
@@ -55,7 +57,7 @@ function onFormSubmit(e) {
 //  }
 
 (function populateMassageTexteria() {
-  let savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
+const savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
 //localStorage.removeItem(MESSAGE)
     if (savedMassage) {
         message.value = savedMassage
