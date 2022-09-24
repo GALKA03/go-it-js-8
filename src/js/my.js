@@ -7,8 +7,8 @@
 // const form = document.querySelector('.feedback-form')
 // console.log('form',form)
 // //refs.input.addEventListener('input', throttle(onInputEmail,500))
-// //refs.form.addEventListener('submit', onFormlSubmit);
-// //efs.textaria.addEventListener('input', throttle(onTexteriaInput,500));
+refs.form.addEventListener('submit', onFormlSubmit);
+efs.textaria.addEventListener('input', throttle(onTexteriaInput,500));
 // // refs.form.addEventListener('input', e => {
 
 // //     formData[e.target.name] = e.target.value;
