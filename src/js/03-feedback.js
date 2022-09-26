@@ -25,8 +25,8 @@ function onDataForm(e) {
 const savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
 //localStorage.removeItem(MESSAGE)
     if (formData) {
-     email.value = savedMassage.email;
-  message.value = savedMassage.message;
+     email.value = formData.email;
+  message.value = formData.message;
     }
 
 })()
