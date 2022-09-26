@@ -9,7 +9,7 @@ const message = document.querySelector('.feedback-form textarea')
 const email = document.querySelector('.feedback-form input')
 form.addEventListener('input', throttle(onDataForm, 500));
 
-const formData = {};
+let formData = JSON.parse(localStorage.getItem(MESSAGE)) || {};
 
 form.addEventListener('submit', onFormSubmit);
 
@@ -17,30 +17,32 @@ form.addEventListener('submit', onFormSubmit);
 function onDataForm(e) {
     
     formData[e.target.name] = e.target.value;
-    console.log(formData)
-localStorage.setItem(MESSAGE, JSON.stringify(formData))
+    //console.log(formData)
+    localStorage.setItem(MESSAGE, JSON.stringify(formData))
+    
+    
 }
 
 (function populateMassageTexteria() {
 const savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
 //localStorage.removeItem(MESSAGE)
     if (savedMassage) {
-        message.value = savedMassage
+        email.value = savedMassage  
      email.value = savedMassage.email;
   message.value = savedMassage.message;
     }
+
 })()
 
 function onFormSubmit(e) {
- e.preventDefault();
-
-    console.log(JSON.parse(localStorage.getItem(MESSAGE)))
-   
-    console.log('отправили fорму');
+    e.preventDefault();
+    //console.log(JSON.parse(localStorage.getItem(MESSAGE)))
+    console.log('отправили fорму',formData);
     e.currentTarget.reset();
-    localStorage.removeItem(MESSAGE)
-   
-    
+    localStorage.removeItem(MESSAGE);
+    //formData.reset()
 }
+
+
 
 
