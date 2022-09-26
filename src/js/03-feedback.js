@@ -18,16 +18,13 @@ function onDataForm(e) {
     
     formData[e.target.name] = e.target.value;
     //console.log(formData)
-    localStorage.setItem(MESSAGE, JSON.stringify(formData))
-    
-    
+    localStorage.setItem(MESSAGE, JSON.stringify(formData))  
 }
 
 (function populateMassageTexteria() {
 const savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
 //localStorage.removeItem(MESSAGE)
-    if (savedMassage) {
-        email.value = savedMassage  
+    if (formData) {
      email.value = savedMassage.email;
   message.value = savedMassage.message;
     }
@@ -36,10 +33,13 @@ const savedMassage = JSON.parse(localStorage.getItem(MESSAGE));
 
 function onFormSubmit(e) {
     e.preventDefault();
-    //console.log(JSON.parse(localStorage.getItem(MESSAGE)))
-    console.log('отправили fорму',formData);
+    console.log(formData)
+    //console.log('отправили fорму',formData);
     e.currentTarget.reset();
     localStorage.removeItem(MESSAGE);
+    if (formData = {}) {
+        return {};
+    }
     //formData.reset()
 }
 
