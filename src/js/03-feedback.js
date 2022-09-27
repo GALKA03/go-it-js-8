@@ -40,7 +40,6 @@ function onFormSubmit(e) {
     if (formData = {}) {
         return {};
     }
-    //formData.reset()
 }
 
 
